@@ -11,7 +11,6 @@ public class Person {
   public Person() {
 
   }
-  
 /**
  * @param someone the name of a person
  * @return greeting string
