@@ -1,5 +1,8 @@
 /* groovylint-disable-next-line CompileStatic */
 pipeline {
+    tools {
+        maven 'Local Maven'
+    }
     agent any
     stages {
         stage('Build') {
