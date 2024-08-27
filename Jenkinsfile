@@ -1,4 +1,3 @@
-/* groovylint-disable-next-line CompileStatic */
 pipeline {
     tools {
         maven 'Local Maven'
@@ -7,11 +6,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                script {
+                    if (isUnix()) {
+                        sh 'mvn clean package'
+                    } else {
+                        bat 'mvn clean package'
+                    }
+                }
             }
             post {
                 success {
-                    echo '开始存档...'
+                    echo '開始存檔...'
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
