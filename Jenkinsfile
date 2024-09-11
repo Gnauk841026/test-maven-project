@@ -1,6 +1,5 @@
 /* groovylint-disable-next-line CompileStatic, NglParseError */
 pipeline {
-    agent any
     tools {
         maven 'Local Maven'
         jdk 'Local JDK'
